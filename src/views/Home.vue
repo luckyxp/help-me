@@ -1,18 +1,38 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="home" align="center">
+    <nav-top />
+    <div class="center">
+      <menu-card v-show="true"/>
+      <demand-list v-show="false"/>
+      <info v-show="false"/>
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import navTop from "../components/navTop";
+import menuCard from "../components/menuCard";
+import demandList from "../components/demandList";
+import info from "../components/info"
 export default {
-  name: 'Home',
   components: {
-    HelloWorld
-  }
-}
+    navTop,menuCard,demandList,info
+  },
+};
 </script>
+
+<style scoped>
+#home {
+  background-color: white;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  position: fixed;
+}
+.center {
+  /* background-color: aqua; */
+  height: 100%;
+  width: 1600px;
+}
+</style>
